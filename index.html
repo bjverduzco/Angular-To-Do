@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html ng-app="something">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="angular.min.js"></script>
+    <script src="script.js"></script>
+  </head>
+  <body ng-controller="MainController">
+    <!-- {{message}} -->
+    <input type="text" ng-model="message" />
+    <button ng-click="addToList()">Add to list</button>
+    <ul id="list">
+      <li ng-repeat="message in toDoList track by $index">
+        {{message}}
+        <input type="checkbox" id="$index" ng-model="checked($index)"/>
+      </li>
+    </ul>
+    <button ng-click="remove($index)">Remove</button>
+
+  </body>
+</html>
